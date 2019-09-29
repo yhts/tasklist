@@ -3,8 +3,8 @@ class TasksController < ApplicationController
         @tasks = Task.all
     end
     
-    def show 
-        @task = Task.find(params[:id])
+    def show
+    @task = Task.find(params[:id])
     end
     
     def new
@@ -18,7 +18,7 @@ class TasksController < ApplicationController
             flash[:success] = "taskが正常に投稿されました"
             redirect_to @task
         else
-            flash[:danger] = "taskが投稿されませんでした"
+            flash.now[:danger] = "taskが投稿されませんでした"
             render :new
         end
     end
